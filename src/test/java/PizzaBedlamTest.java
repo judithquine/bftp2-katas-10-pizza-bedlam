@@ -20,6 +20,35 @@ public class PizzaBedlamTest {
          TOTAL                 9,30€"""));
     }
 
+    @Test
+    void pizzaProsciutto(){
+
+        ProscuittoPizza proscuittoPizza = new ProscuittoPizza();
+
+        String ticket = proscuittoPizza.getTicket();
+
+        assertThat(ticket, equalTo(
+                """
+                 PROSCUITTO   12,00€\s
+                 _____________________________
+                 TOTAL                 12,00€"""));
+    }
+
+    @Test
+    void pizzaTicket(){
+
+        Pizza pizza = new Pizza();
+
+        String ticket = pizza.getTicket();
+
+        assertThat(ticket, equalTo(
+                pizza.getName() +        pizza.getPrice() + "€" +
+                        "_____________________________" +
+                        "TOTAL                 " + pizza.getPrice() + "€"));
+    }
+
+
+
 
 
 
