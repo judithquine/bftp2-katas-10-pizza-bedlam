@@ -47,6 +47,18 @@ public class PizzaBedlamTest {
                         "TOTAL                 " + pizza.getPrice() + "€"));
     }
 
+    @Test
+    void pizzaTicketMarghareta(){
+
+        Pizza pizza = new Pizza("MARGHARETA", 9.30);
+
+        String ticket = pizza.getTicket();
+
+        assertThat(ticket, equalTo(
+                pizza.getName() +        pizza.getPrice() + "€" +
+                        "_____________________________" +
+                        "TOTAL                 " + pizza.getPrice() + "€"));
+    }
 
 
 
